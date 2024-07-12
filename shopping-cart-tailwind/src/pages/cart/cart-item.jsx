@@ -21,9 +21,9 @@ export const CartItem = (props) => {
           <button
             onClick={() => {
               if (quantity > 1) {
-                dispatch({ type: "DECREASE", payload: props.data.id });
+                dispatch({ type: "DECREASE", payload: props.data });
               } else {
-                dispatch({ type: "REMOVE", payload: props.data.id });
+                dispatch({ type: "REMOVE", payload: props.data });
               }
             }}
           >
@@ -32,7 +32,7 @@ export const CartItem = (props) => {
           </button>
           <p className="w-10 text-center font-bold">{quantity}</p>
           <button
-            onClick={() => dispatch({ type: "INCREASE", payload: props.data.id })}
+            onClick={() => dispatch({ type: "INCREASE", payload: props.data })}
           >
             {" "}
             +{" "}

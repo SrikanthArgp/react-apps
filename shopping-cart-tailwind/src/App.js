@@ -1,5 +1,5 @@
 
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Navbar } from "./components/navbar";
 import { Shop } from "./pages/shop/shop";
 import { Contact } from "./pages/contact";
@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="w-full h-auto min-h-screen">
       <ShopContextProvider>
-        
+        <Router>
           <Navbar />
           <Routes>
             <Route path="/" element={<Shop />} />
@@ -19,9 +19,8 @@ function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<CheckOut />} />
           </Routes>
-         
-        </ShopContextProvider>
-      
+        </Router>
+      </ShopContextProvider>
     </div>
   );
 }

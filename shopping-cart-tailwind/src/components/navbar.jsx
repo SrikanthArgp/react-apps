@@ -1,9 +1,11 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { ShoppingCart } from "phosphor-react";
 import { BsCart3 } from "react-icons/bs";
 import { ShopContext } from "../context/shop-context";
 
 export const Navbar = () => {
+
   const { state } = useContext(ShopContext);
 
   return (
@@ -20,21 +22,30 @@ export const Navbar = () => {
         <Link className="ml-5 text-2xl" to="/contact">
           Contact
         </Link>
-        
         <Link className="ml-5 text-2xl" to="/cart">
-      
-          <div className="relative">
-            <BsCart3 className="  w-8 h-8" />
-            {/* <div className="absolute h-5 w-5 rounded-full bg-red-600 -right-2 -top-2"> */}
-            {state.length === 0 ? (
-              <p></p>
-            ) : (
-              <div className="absolute h-5 w-5 rounded-full bg-red-600 -right-2 -top-2">
+          {/* <div className="relative">
+            <ShoppingCart size={40} />
+            <div className="absolute h-6 w-6 rounded-full bg-red-600 -right-2 -top-2 ">
+              {state.length === 0 ? (
+                <p></p>
+              ) : (
                 <p className="text-center  font-bold p-.5 text-sm">
                   {state.length}
                 </p>
-              </div>
-            )}
+              )}
+            </div>
+          </div> */}
+          <div className="flex relative">
+            <BsCart3 className="  w-8 h-8" />
+            <div className="absolute h-5 w-5 rounded-full bg-red-600 -right-2 -top-2">
+              {state.length === 0 ? (
+                <p></p>
+              ) : (
+                <p className="text-center  font-bold p-.5 text-sm">
+                  {state.length}
+                </p>
+              )}
+            </div>
           </div>
         </Link>
       </div>

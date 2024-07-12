@@ -21,7 +21,7 @@ export const Cart = () => {
           <h1 className="text-2xl">Your Cart Items</h1>
         </div>
       ) : 
-       null
+        null
       }
 
       <div className="flex flex-col justify-center items-center">
@@ -30,15 +30,16 @@ export const Cart = () => {
             return <CartItem data={product} />;
           })
         ) : (
-         <h1 className="text-rose-600"> Your Shopping Cart is Empty</h1>
+          <h1 className="text-rose-600"> Your Shopping Cart is Empty</h1>
         )}
       </div>
 
       {totalAmount > 0 ? (
         <div className="w-[50%]">
           <div className="flex items-center justify-end mr-20">
-            <p className="text-3xl font-bold text-green-500">
-              Total Amount: ${totalAmount.toFixed(2)}
+            <p className="text-2xl text-green-500">
+              {" "}
+              Total Amount: ${totalAmount.toFixed(2)}{" "}
             </p>
           </div>
           <div className="flex items-center justify-center mt-10">
@@ -46,15 +47,18 @@ export const Cart = () => {
               className="w-40 h-12 bg-gray-900 text-white rounded-lg m-2 cursor-pointer"
               onClick={() => navigate("/")}
             >
-              Continue Shopping
+              {" "}
+              Continue Shopping{" "}
             </button>
             <button
               className="w-40 h-12 bg-gray-900 text-white rounded-lg m-2 cursor-pointer"
               onClick={() => {
+                //   checkout();
                 navigate("/checkout");
               }}
             >
-              Checkout
+              {" "}
+              Checkout{" "}
             </button>
           </div>
         </div>
